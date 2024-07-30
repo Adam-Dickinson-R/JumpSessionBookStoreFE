@@ -16,7 +16,7 @@ export class LoginComponent {
     private loginService: LoginService,
     private router: Router) {
   }
-
+//ToDo: stop users from navigating without login 
 
   Login() {
     this.loginService.login(this.username, this.password).subscribe(

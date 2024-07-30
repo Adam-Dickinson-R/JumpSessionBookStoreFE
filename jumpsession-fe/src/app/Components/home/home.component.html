@@ -16,7 +16,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let user of filteredUsers">
+            <tr *ngFor="let user of filteredUsers" (click)="onRowClick(user)">
               <td>{{ user.id }}</td>
               <td>{{ user.name }}</td>
               <td>{{ user.surname }}</td>

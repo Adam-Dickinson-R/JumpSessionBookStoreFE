@@ -36,4 +36,9 @@ export class HomeComponent {
       profile.phoneNumber.toLowerCase().includes(term)
     );
   }
+
+  onRowClick(profile: Profile): void {
+    //ToDo: do something like open a modal to asign books to the selected user
+    console.log('Row clicked:', profile);
+  }
 }
