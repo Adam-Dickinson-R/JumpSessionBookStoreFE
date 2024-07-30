@@ -11,6 +11,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
+  //ToDo: write Login endpoint to handle log in, leave this as is for them to fix with correct endpoint, Maybe
   login(username: string, password: string): Observable<boolean> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     
@@ -23,13 +24,5 @@ export class LoginService {
         }
         return false;
       }));
-  }
-
-  logout(): void {
-    localStorage.removeItem('currentAdmin');
-  }
-
-  public get loggedIn(): boolean {
-    return localStorage.getItem('currentAdmin') !== null;
   }
 }
