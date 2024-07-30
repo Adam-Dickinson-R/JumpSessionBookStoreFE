@@ -1,0 +1,19 @@
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-weight: bold;
+  }
+  
+  .table {
+    margin-bottom: 0;
+  }
+  
+  .alert {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
