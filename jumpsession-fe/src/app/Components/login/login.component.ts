@@ -33,7 +33,7 @@ export class LoginComponent {
     // );
     this.loginService.login(this.username, this.password).subscribe({
       next: () => {
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/users');
         this.navService.toggleNav();
       },
       error: () => {

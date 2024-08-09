@@ -1,7 +1,8 @@
 export interface Profile {
-    id: number;
+    id?: number;
     name: string;
     surname: string;
     email: string;
     phoneNumber: string;
-}
+  }
+  

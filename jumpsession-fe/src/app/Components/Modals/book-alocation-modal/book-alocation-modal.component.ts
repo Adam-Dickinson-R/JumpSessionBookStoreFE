@@ -10,11 +10,6 @@ export class BookAlocationModalComponent {
   @Input() selectedProfile: Profile | null = null;
   @Output() close = new EventEmitter<void>();
 
-
-  // vars for modal parent
-  // selectedProfile: Profile | null = null;  // Track the selected profile
-  // isModalVisible: boolean = false;  // Control the visibility of the modal
-
   assignBook(bookId: string) {
     // Implement the logic to assign the book to the user
     console.log(`Assigning book ID: ${bookId} to user: ${this.selectedProfile!.name}`);
@@ -24,15 +19,4 @@ export class BookAlocationModalComponent {
   closeModal() {
     this.close.emit();
   }
-
-  // Modals for parent 
-  // onRowClick(profile: Profile): void {
-  //   this.selectedProfile = profile;  // Set the selected profile
-  //   this.isModalVisible = true;  // Show the modal
-  // }
-
-  // closeModal(): void {
-  //   this.isModalVisible = false;  // Hide the modal
-  // }
-
 }
