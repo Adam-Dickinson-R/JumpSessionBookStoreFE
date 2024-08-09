@@ -11,6 +11,7 @@ import { UsersComponent } from './Components/users/users.component';
 import { BooksComponent } from './Components/books/books.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { AssignComponent } from './Components/assign/assign.component';
+import { BookAlocationModalComponent } from './Components/Modals/book-alocation-modal/book-alocation-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AssignComponent } from './Components/assign/assign.component';
     UsersComponent,
     BooksComponent,
     NavbarComponent,
-    AssignComponent
+    AssignComponent,
+    BookAlocationModalComponent
   ],
   imports: [
     BrowserModule,
