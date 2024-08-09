@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
 })
 
 export class NavbarComponent {
-  
+
+  goBack() {
+    history.back();
+  }
 }
 

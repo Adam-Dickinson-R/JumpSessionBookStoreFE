@@ -1,3 +1,35 @@
-<div class="container">
-    <button class="btn btn-primary" (click)="goBack()">Back</button>
-</div>
+<div class="container mt-1">
+    <button class="btn btn-primary mb-1" (click)="goBack()">Back</button>
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title text-center mb-4">Books List</h2>
+        <div class="form-group mb-2">
+          <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm" (input)="filterBooks()">
+        </div>
+        <table *ngIf="filteredBooks.length > 0; else noBooks" class="table table-striped table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th>ID</th>
+              <th>Book Name</th>
+              <th>ISBN</th>
+              <th>Author</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of filteredBooks" (click)="onRowClick(book)">
+              <td>{{ book.id }}</td>
+              <td>{{ book.book_name }}</td>
+              <td>{{ book.isbn_number }}</td>
+              <td>{{ book.author }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <ng-template #noBooks>
+          <p class="text-center">No Books found.</p>
+        </ng-template>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+      </div>
+    </div>
+  </div>
