@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Profile } from 'src/app/Models/profile';
 import { ProfileService } from 'src/app/Services/profile.service';
+import { NavService } from 'src/app/Shared-Services/nav.service';
 
 @Component({
   selector: 'app-users',
@@ -18,10 +20,11 @@ export class UsersComponent {
   isBookModalVisible: boolean = false;
   isCreateUserModalVisible: boolean = false;
 
-  constructor(private profileService: ProfileService) { }
+  constructor(private profileService: ProfileService, private router: Router, private navService: NavService) { }
 
   ngOnInit(): void {
     this.loadUsers();
+    this.navService.showNav = true;
   }
   
   loadUsers(): void {
@@ -59,8 +62,12 @@ export class UsersComponent {
   }
 
   onRowClick(profile: Profile): void {
-    this.selectedProfile = profile;
-    this.isBookModalVisible = true;
+    // this.selectedProfile = profile;
+    // this.isBookModalVisible = true;
+    // route to the assign comoonent
+    this.navService.showNav = false;
+    this.navService.selectedProfile = profile;
+    this.router.navigateByUrl('/assign-to-user');
   }
 
   closeModal(): void {

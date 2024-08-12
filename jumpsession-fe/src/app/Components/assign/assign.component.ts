@@ -13,6 +13,7 @@ export class AssignComponent {
   filteredBooks: Book[] = [];
   searchTerm: string = "";
   selectedBooks: Book[] = [];
+  showAssign: boolean = false;
 
   constructor(private bookService : BooksService) {}
 
@@ -37,16 +38,28 @@ export class AssignComponent {
   }
 
   addSelectedBook(book: Book) {
-    // Add to the list
-    if(!this.selectedBooks.includes(book)) { // test if this works
+    if(!this.selectedBooks.includes(book)) {
       this.selectedBooks.push(book)
-    } else {
-      // book already selected
     }
   }
 
   removeSelectedBook(index: number) {
-    // Remove from the list
     this.selectedBooks.splice(index, 1);
+  }
+
+  hasBeenSelected(book: Book): boolean {
+    return this.selectedBooks.includes(book);
+  }
+
+  goBack() {
+    history.back();
+  }
+
+  assignBooks() {
+    this.showAssign = true;
+  }
+
+  hideConfirm(event: boolean) {
+    this.showAssign = event;
   }
 }

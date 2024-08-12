@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Profile } from '../Models/profile';
+import { CheckOut } from '../Models/checkOut';
 
 
 @Injectable({
@@ -20,10 +21,9 @@ export class ProfileService {
     return this.http.get<any[]>(`${this.apiUrl}/get-users`, { headers })
       .pipe(
         map(response => {
-          return response; // Assuming the response is an array of users
+          return response;
         }),
         catchError(error => {
-          console.error('Error fetching users:', error);
           return throwError('Error fetching users, please try again later.');
         })
       );
@@ -32,9 +32,6 @@ export class ProfileService {
   createUser(profile: Profile): Observable<Profile> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     
-    console.log(`${this.apiUrl}/create-user`);
-    
-
     return this.http.post<Profile>(`${this.apiUrl}/create-user`, profile, { headers })
       .pipe(
         map(response => {
@@ -45,5 +42,9 @@ export class ProfileService {
           return throwError('Error creating user, please try again later.');
         })
       );
+  }
+
+  assignBooks(checkOut : CheckOut) : Observable<CheckOut> {
+    return this.http.post<CheckOut>(`${this.apiUrl}/checkOut`, checkOut);
   }
 }

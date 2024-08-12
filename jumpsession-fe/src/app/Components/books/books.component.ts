@@ -40,7 +40,7 @@ export class BooksComponent {
     console.log('Row clicked:', book);
   }
 
-  goBack() {
-    history.back();
-  }
+  // goBack() {
+  //   history.back();
+  // }
 }

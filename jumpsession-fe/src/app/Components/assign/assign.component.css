@@ -1,0 +1,18 @@
+tr{
+    background-color: white;
+    transition: background 0.4s;
+}
+span, tr:hover{
+    cursor: pointer;
+}
+
+#selectedBooks {
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.selectedRow {
+    text-decoration:line-through;
+    cursor:not-allowed;
+}
