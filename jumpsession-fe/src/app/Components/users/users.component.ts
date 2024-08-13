@@ -62,9 +62,6 @@ export class UsersComponent {
   }
 
   onRowClick(profile: Profile): void {
-    // this.selectedProfile = profile;
-    // this.isBookModalVisible = true;
-    // route to the assign comoonent
     this.navService.showNav = false;
     this.navService.selectedProfile = profile;
     this.router.navigateByUrl('/assign-to-user');
