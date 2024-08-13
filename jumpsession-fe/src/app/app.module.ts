@@ -12,6 +12,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { AssignComponent } from './Components/assign/assign.component';
 import { BookAlocationModalComponent } from './Components/Modals/book-alocation-modal/book-alocation-modal.component';
 import { CreateUserModalComponent } from './Components/Modals/create-user-modal/create-user-modal.component';
+import { ConfirmAssignComponent } from './Components/confirm-assign/confirm-assign.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CreateUserModalComponent } from './Components/Modals/create-user-modal/
     NavbarComponent,
     AssignComponent,
     BookAlocationModalComponent,
-    CreateUserModalComponent
+    CreateUserModalComponent,
+    ConfirmAssignComponent
   ],
   imports: [
     BrowserModule,

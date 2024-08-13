@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>User Checkout Confirmation</h2>
+    <div id="user-profile">
+        <h6>{{navService.selectedProfile?.name}} {{navService.selectedProfile?.surname}}</h6>
+        <h6>{{navService.selectedProfile?.email}}</h6>
+        <h6>{{navService.selectedProfile?.phoneNumber}}</h6>
+    </div>
+    <h2>Selected Books:</h2>
+    <div id="selected-books">
+        <div *ngFor="let book of selectedBooks">
+            <h6>{{book.book_name}} by {{book.author}}</h6>
+        </div>
+        <div>
+            <button>Confirm</button>
+            <button>Cancel</button>
+        </div>
+    </div>
+</div>
