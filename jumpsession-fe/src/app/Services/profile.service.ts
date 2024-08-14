@@ -35,7 +35,7 @@ export class ProfileService {
     return this.http.post<Profile>(`${this.apiUrl}/create-user`, profile, { headers })
       .pipe(
         map(response => {
-          return response; // Assuming the response contains the created user
+          return response;
         }),
         catchError(error => {
           console.error('Error creating user:', error);
