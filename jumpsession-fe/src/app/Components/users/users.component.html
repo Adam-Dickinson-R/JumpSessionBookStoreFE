@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">
+          <button type="button" class="btn btn-primary" (click)="openCreateUserModal()">Create</button>
+        </div>
+        <div class="col-md-8 text-center">
+          <h2 class="card-title mb-4">User List</h2>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm" (input)="filterUsers()">
+      </div>
+      <table *ngIf="filteredUsers.length > 0; else noUsers" class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of filteredUsers" (click)="onRowClick(user)">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.surname }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phoneNumber }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #noUsers>
+        <p class="text-center">No users found.</p>
+      </ng-template>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <app-book-alocation-modal *ngIf="isBookModalVisible" [selectedProfile]="selectedProfile" (close)="closeModal()">
+</app-book-alocation-modal> -->
+
+<app-create-user-modal *ngIf="isCreateUserModalVisible" (close)="closeCreateUserModal()"
+  (userCreated)="onUserCreated($event)">
+</app-create-user-modal>

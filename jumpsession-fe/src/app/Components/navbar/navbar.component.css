@@ -1,0 +1,6 @@
+/* Example styling */
+.nav-tabs .nav-link.active {
+    background-color: #f0f0f0;
+    color: #333;
+    border-bottom: 2px solid #007bff;
+}

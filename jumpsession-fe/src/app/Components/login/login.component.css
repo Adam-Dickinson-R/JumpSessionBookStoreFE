@@ -1,0 +1,15 @@
+.container {
+    height: 100vh;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-weight: bold;
+  }
+  
+  .btn {
+    font-size: 1.1rem;
+  }
